@@ -1,3 +1,5 @@
+@use 'sass:list' as *;
+
 //
 // Variables
 //
@@ -204,7 +206,7 @@ button {
             background-color $a-bar,
             top $a-bar;
 
-        @for $i from 1 through freq($c-balls) {
+        @for $i from 1 through length($c-balls) {
             &--type-#{ $i } {
                 background-color: nth($c-balls, $i);
             }
@@ -271,7 +273,7 @@ button {
         text-align: center;
         line-height: $w-ball;
 
-        @for $i from 1 through freq($c-balls) {
+        @for $i from 1 through length($c-balls) {
             &--#{ $i } {
                 background-color: nth($c-balls, $i);
             }
